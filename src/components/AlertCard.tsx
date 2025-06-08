@@ -12,7 +12,6 @@ type AlertCardProps = {
 }
 
 export function AlertCard({ alert, sensorNome, sensorLocalizacao, onPress }: AlertCardProps): JSX.Element {
-  // Ícone baseado no tipo de alerta
   const getAlertIcon = (tipoAlerta: string): keyof typeof Ionicons.glyphMap => {
     switch (tipoAlerta) {
       case "TEMPERATURA_ALTA":
@@ -24,7 +23,7 @@ export function AlertCard({ alert, sensorNome, sensorLocalizacao, onPress }: Ale
     }
   }
 
-  // Cor baseada no status
+
   const getStatusColor = (status: string): string => {
     return status === "ATIVO" ? theme.colors.error : theme.colors.success
   }

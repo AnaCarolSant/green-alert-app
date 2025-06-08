@@ -11,6 +11,7 @@ export type MainTabParamList = {
   Dashboard: undefined;
   Alertas: undefined;
   Sensores: undefined;
+  Chamados: undefined;
   Histórico: undefined;
   Perfil: undefined;
 };

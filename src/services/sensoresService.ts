@@ -10,7 +10,7 @@ export interface Sensor {
 
 export async function fetchSensores(): Promise<Sensor[]> {
   const token = await AsyncStorage.getItem("token")
-  const response = await fetch("http://localhost:8080/sensores", {
+  const response = await fetch("http://172.191.46.215:8080/sensores", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -26,7 +26,7 @@ export async function createSensor(dados: {
   dataCriacao: string
 }) {
   const token = await AsyncStorage.getItem("token")
-  const response = await fetch("http://localhost:8080/sensores", {
+  const response = await fetch("http://172.191.46.215:8080/sensores", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

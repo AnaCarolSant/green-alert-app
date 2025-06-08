@@ -30,7 +30,7 @@ export function HistoryScreen({}: MainTabScreenProps<"Histórico">): JSX.Element
   console.log("leituras recebidas:", leituras)
 
   const getChartData = (): ChartData => {
-    // Filtra leituras pela métrica selecionada
+
     const metricKey =
       selectedMetric === "temperature"
         ? "CELSIUS"
@@ -38,7 +38,7 @@ export function HistoryScreen({}: MainTabScreenProps<"Histórico">): JSX.Element
 
     const filtered = leituras.filter((l) => l.unidade.toUpperCase() === metricKey)
 
-    // Exemplo: pega as últimas 6 leituras para o gráfico
+
     const data = filtered.slice(-6).map((l) => l.valor)
     const labels = filtered.slice(-6).map((l) =>
       new Date(l.dataHora).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })

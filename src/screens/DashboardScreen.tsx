@@ -4,7 +4,6 @@ import { useState, useCallback, useEffect } from "react"
 import { View, StyleSheet, ScrollView, RefreshControl } from "react-native"
 import { Title, Paragraph, Text, Surface } from "react-native-paper"
 import { Ionicons } from "@expo/vector-icons"
-import { SensorCard } from "../components/SensorCard"
 import { ChartCard } from "../components/ChartCard"
 import { theme } from "../theme/theme"
 import type { MainTabScreenProps } from "../types/navigation"
@@ -78,7 +77,6 @@ export function DashboardScreen({}: MainTabScreenProps<"Dashboard">): JSX.Elemen
       refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
     >
       <View style={styles.header}>
-        {/* <Title style={styles.headerTitle}>Dashboard</Title> */}
         <Paragraph style={styles.headerSubtitle}>Monitoramento em tempo real</Paragraph>
       </View>
 

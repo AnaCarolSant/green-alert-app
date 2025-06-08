@@ -5,6 +5,7 @@ import { AlertsScreen } from "../screens/AlertsScreen"
 import { SensorsScreen } from "../screens/SensorsScreen"
 import { HistoryScreen } from "../screens/HistoryScreen"
 import { ProfileScreen } from "../screens/ProfileScreen"
+import { ChamadosScreen } from "../screens/ChamadosScreen"
 import { theme } from "../theme/theme"
 import type { MainTabParamList } from "../types/navigation"
 
@@ -25,6 +26,8 @@ export function MainTabNavigator(): JSX.Element {
             iconName = focused ? "hardware-chip" : "hardware-chip-outline"
           } else if (route.name === "Histórico") {
             iconName = focused ? "bar-chart" : "bar-chart-outline"
+          } else if (route.name === "Chamados") {
+            iconName = focused ? "list" : "list-outline"
           } else if (route.name === "Perfil") {
             iconName = focused ? "person" : "person-outline"
           } else {
@@ -53,6 +56,7 @@ export function MainTabNavigator(): JSX.Element {
       <Tab.Screen name="Dashboard" component={DashboardScreen} />
       <Tab.Screen name="Alertas" component={AlertsScreen} />
       <Tab.Screen name="Sensores" component={SensorsScreen} />
+      <Tab.Screen name="Chamados" component={ChamadosScreen} />
       <Tab.Screen name="Histórico" component={HistoryScreen} />
       <Tab.Screen name="Perfil" component={ProfileScreen} />
     </Tab.Navigator>

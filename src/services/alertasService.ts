@@ -11,7 +11,7 @@ export interface Alerta {
 
 export async function fetchAlertas(): Promise<Alerta[]> {
   const token = await AsyncStorage.getItem("token")
-  const response = await fetch("http://localhost:8080/alertas", {
+  const response = await fetch("http://172.191.46.215:8080/alertas", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -23,7 +23,7 @@ export async function fetchAlertas(): Promise<Alerta[]> {
 
 export async function updateAlertaStatus(alerta: Alerta, novoStatus: string) {
   const token = await AsyncStorage.getItem("token")
-  const response = await fetch(`http://localhost:8080/alertas/${alerta.id}`, {
+  const response = await fetch(`http://172.191.46.215:8080/alertas/${alerta.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

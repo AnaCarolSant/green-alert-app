@@ -59,9 +59,6 @@ export function SensorsScreen({}: MainTabScreenProps<"Sensores">): JSX.Element {
   })
 
   const renderSensor = ({ item }: { item: Sensor }) => {
-    const ultimaLeitura = leituras
-      .filter((l) => l.sensorId === item.id)
-      .sort((a, b) => new Date(b.dataHora).getTime() - new Date(a.dataHora).getTime())[0]
 
     return (
       <SensorCard
@@ -88,7 +85,6 @@ export function SensorsScreen({}: MainTabScreenProps<"Sensores">): JSX.Element {
     return tipo === "TEMPERATURA" ? "temperature" : "humidity"
   }
 
-  // Função para cadastrar
   const handleCreateSensor = async () => {
     try {
       await createSensor(novoSensor)
@@ -136,7 +132,7 @@ export function SensorsScreen({}: MainTabScreenProps<"Sensores">): JSX.Element {
         showsVerticalScrollIndicator={false}
       />
 
-      <FAB icon="plus" style={styles.fab} onPress={() => setModalVisible(true)} />
+      <FAB icon="plus" style={styles.fab} color="#97b68d" onPress={() => setModalVisible(true)} />
 
       {modalVisible && (
         <View

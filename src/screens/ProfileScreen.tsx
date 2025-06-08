@@ -23,9 +23,8 @@ export function ProfileScreen({ navigation }: MainTabScreenProps<"Perfil">): JSX
   useEffect(() => {
     const loadUser = async () => {
       try {
-        const email = await AsyncStorage.getItem("userEmail") // Salve o email no login!
+        const email = await AsyncStorage.getItem("userEmail") 
         const usuarios = await fetchUsuarios()
-        // Busca o usuário logado pelo email salvo
         const usuarioLogado = usuarios.find((u: any) => u.email === email)
         setUser(usuarioLogado)
       } catch (e) {
@@ -39,26 +38,6 @@ export function ProfileScreen({ navigation }: MainTabScreenProps<"Perfil">): JSX
     if (user) setEditUser(user)
   }, [user])
 
-  const handleLogout = (): void => {
-    Alert.alert("Sair", "Tem certeza que deseja sair do aplicativo?", [
-      { text: "Cancelar", style: "cancel" },
-      {
-        text: "Sair",
-        style: "destructive",
-        onPress: () => navigation.replace("Login"),
-      },
-    ])
-  }
-
-  type SettingKey = "notifications" | "darkMode" | "autoRefresh" | "soundAlerts"
-
-  const toggleSetting = (setting: SettingKey): void => {
-    setSettings((prevSettings) => ({
-      ...prevSettings,
-      [setting]: !prevSettings[setting],
-    }))
-  }
-
   const handleSave = async () => {
     try {
       await updateUsuario(editUser.idPessoa, {
@@ -67,7 +46,7 @@ export function ProfileScreen({ navigation }: MainTabScreenProps<"Perfil">): JSX
         telefone: editUser.telefone,
         email: editUser.email,
         role: editUser.role,
-        senha: editUser.senha, // ou senha nova, se for o caso
+        senha: editUser.senha, 
       })
       setUser(editUser)
       setEditMode(false)
@@ -182,15 +161,6 @@ export function ProfileScreen({ navigation }: MainTabScreenProps<"Perfil">): JSX
         </Button>
       )}
 
-      <Button
-        mode="contained"
-        onPress={handleLogout}
-        style={styles.logoutButton}
-        buttonColor={theme.colors.error}
-        icon="logout"
-      >
-        Sair do Aplicativo
-      </Button>
     </ScrollView>
   )
 }

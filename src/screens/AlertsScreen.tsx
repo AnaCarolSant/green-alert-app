@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useEffect } from "react"
 import { View, StyleSheet, FlatList, RefreshControl, Alert } from "react-native"
-import { Searchbar, FAB, Portal, Dialog, Paragraph, Button } from "react-native-paper"
+import { Searchbar, Portal, Dialog, Paragraph, Button } from "react-native-paper"
 import { AlertCard } from "../components/AlertCard"
 import { theme } from "../theme/theme"
 import type { MainTabScreenProps } from "../types/navigation"
@@ -136,7 +136,6 @@ export function AlertsScreen({}: MainTabScreenProps<"Alertas">): JSX.Element {
         </Dialog>
       </Portal>
 
-      <FAB icon="plus" style={styles.fab} onPress={() => {}} />
     </View>
   )
 }
@@ -158,13 +157,6 @@ const styles = StyleSheet.create({
   listContainer: {
     padding: theme.spacing.sm,
     paddingBottom: 80,
-  },
-  fab: {
-    position: "absolute",
-    margin: theme.spacing.md,
-    right: 0,
-    bottom: 0,
-    backgroundColor: theme.colors.primary,
   },
   dialog: {
     backgroundColor: theme.colors.surface,

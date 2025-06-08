@@ -22,7 +22,7 @@ export interface LeiturasResponse {
 
 export async function fetchLeituras(): Promise<LeiturasResponse> {
   const token = await AsyncStorage.getItem("token")
-  const response = await fetch("http://localhost:8080/leituras", {
+  const response = await fetch("http://172.191.46.215:8080/leituras", {
     headers: {
       Authorization: `Bearer ${token}`,
     },

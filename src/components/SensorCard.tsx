@@ -15,23 +15,13 @@ export function SensorCard({
   icon,
   type,
   onPress,
-  onDelete,
+
 }: SensorCardProps): JSX.Element {
   return (
     <Card style={{ margin: 8 }} onPress={onPress}>
       <Card.Content style={{ flexDirection: "row", alignItems: "center" }}>
         <Ionicons name={icon} size={32} color={theme.colors.primary} style={{ marginRight: 16 }} />
         <Text style={{ fontSize: 18, fontWeight: "bold", flex: 1 }}>{title}</Text>
-        {onDelete && (
-          <Button
-            icon="delete"
-            mode="text"
-            onPress={onDelete}
-            compact
-          >
-            Excluir
-          </Button>
-        )}
       </Card.Content>
     </Card>
   )

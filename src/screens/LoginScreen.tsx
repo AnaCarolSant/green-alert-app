@@ -24,7 +24,7 @@ export function LoginScreen({ navigation }: RootStackScreenProps<"Login">): JSX.
     setLoading(true)
 
     try {
-      const response = await fetch("http://localhost:8080/login", {
+      const response = await fetch("http://172.191.46.215:8080/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -59,7 +59,7 @@ export function LoginScreen({ navigation }: RootStackScreenProps<"Login">): JSX.
         <ScrollView contentContainerStyle={styles.scrollContainer}>
           <View style={styles.logoContainer}>
             <Ionicons name="leaf" size={80} color={theme.colors.onPrimary} />
-            <Title style={styles.logoText}>Monitor Tree</Title>
+            <Title style={styles.logoText}>Green Alert</Title>
             <Paragraph style={styles.subtitle}>Monitoramento Ambiental Inteligente</Paragraph>
           </View>
 
@@ -68,7 +68,6 @@ export function LoginScreen({ navigation }: RootStackScreenProps<"Login">): JSX.
               <Title style={styles.loginTitle}>Entrar</Title>
 
               <TextInput
-                label="Email"
                 value={email}
                 onChangeText={setEmail}
                 mode="outlined"
@@ -79,7 +78,6 @@ export function LoginScreen({ navigation }: RootStackScreenProps<"Login">): JSX.
               />
 
               <TextInput
-                label="Senha"
                 value={password}
                 onChangeText={setPassword}
                 mode="outlined"
@@ -105,13 +103,6 @@ export function LoginScreen({ navigation }: RootStackScreenProps<"Login">): JSX.
                 {loading ? "Entrando..." : "Entrar"}
               </Button>
 
-              <Button
-                mode="text"
-                onPress={() => Alert.alert("Info", "Funcionalidade em desenvolvimento")}
-                style={styles.forgotButton}
-              >
-                Esqueceu a senha?
-              </Button>
             </Card.Content>
           </Card>
         </ScrollView>
