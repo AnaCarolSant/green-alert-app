@@ -42,6 +42,19 @@ npm install
 npx expo start
 ```
 
+## 🔐 Login de Teste
+
+Para acessar o aplicativo durante os testes, utilize as seguintes credenciais: 
+
+ * Email
+```
+ana@fiap.com.br
+```
+* Senha
+```
+1234
+```
+
 ## ⚙️ Configuração
 
 - 🌐 O app espera que o backend esteja rodando em `http://172.191.46.215:8080`.
@@ -56,5 +69,3 @@ npx expo start
 - 💾 AsyncStorage  
 - 📊 react-native-chart-kit
 
-
-👨‍💻 Desenvolvido por sua equipe **Green Alert**.
