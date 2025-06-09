@@ -3,6 +3,13 @@
 Green Alert é um aplicativo de monitoramento ambiental inteligente, desenvolvido em ⚛️ React Native com 🚀 Expo, que permite acompanhar sensores ambientais, visualizar alertas, históricos de leituras e gerenciar chamados de atendimento.
 
 
+🌀 LINK MOSTRANDO AS FUNCIONALIDADES (YOUTUBE):
+```
+https://www.youtube.com/watch?v=evHddJxRqkc
+```
+
+
+
 👨‍💻 Desenvolvido por sua equipe:
 
 - 👉 **Ana Carolina Reis Santana** — RM: **556219**
